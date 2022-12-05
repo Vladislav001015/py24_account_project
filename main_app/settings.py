@@ -41,10 +41,12 @@ INSTALLED_APPS = [
 
     # library
     'rest_framework',
-    'rest_framework.authtoken',
+    # 'rest_framework.authtoken',
+    'rest_framework_simplejwt',
 
     # my app
     'applications.account',
+    'applications.product',
 ]
 
 MIDDLEWARE = [
@@ -138,7 +140,8 @@ AUTH_USER_MODEL = 'account.CustomUser'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication'  # встроенный токен в питоне
+        # 'rest_framework.authentication.TokenAuthentication'  # встроенный токен в питоне
+        'rest_framework_simplejwt.authentication.JWTAuthentication'
     ]
 }
 
