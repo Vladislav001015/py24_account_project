@@ -11,6 +11,8 @@ def send_hello(email):
 
 
 def send_confirmation_email(email, code):
+    import time
+    time.sleep(5)
     full_link = f'http://localhost:8000/account/activate/{code}'
     send_mail(
         'Активация пользователя',
